@@ -2,26 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* fonts.css */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+.custom_max_width {
+  max-width: 1200px; /* Set your custom max-width value */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Navigation bar */
+.link-marker::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #FE7C50;
+  border-radius: 50%;
+  margin-right: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateY(-50%); 
+}
+
+.link-marker:hover::before {
+  opacity: 1;
+}
+
+.link-marker:active::before {
+  background-color: #FA541C; 
+  transition: opacity 0.3s ease;
+}
+
+
+/* Text */
+.desc_text {
+  color: #637381;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 300;
+  font-size: small;
+  padding: 4px;
+}
+
+.heading_text {
+  color: #212B36;
+  font-family: 'Barlow', sans-serif; 
+  font-weight: 600;
+  font-size: xx-large;
+  padding: 4px;
+}
+
+
+
+/* Black Button - Primary */
+.custom_button {
+ 
+color: white;
+background-color: #1f2937; 
+font-weight: 500;
+border-radius: 0.375rem; 
+font-size: 0.875rem; 
+padding: 0.5rem 1rem; 
+text-align: center;
+cursor: pointer;
+outline: none;
+
+&:hover {
+  background-color: #4a5568; 
+}
+}
+
+.primary_button {
+ 
+  color: white;
+  background-color: #F97315; 
+  font-weight: 500;
+  border-radius: 0.375rem; 
+  font-size: 0.875rem; 
+  padding: 0.5rem 1rem; 
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  
+  &:hover {
+    background-color: #E35F02; 
+  }
+  }
+
+
+.timer_button {
+  color: white;
+  background-color: #1f2937; 
+  font-weight: 500;
+  border-radius: 0.375rem; 
+  font-size: 0.875rem; 
+  width: 40px; 
+  height: 40px;
+  text-align: center;
+  cursor: text	;
+  outline: none;
 }
